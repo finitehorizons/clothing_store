@@ -1,9 +1,15 @@
 import "../sign-up-form/sign-up-form-styles.scss";
 import { useState } from "react";
 
-import { createAuthUserWithEmailAndPassword } from "../../utils/firebase/firebase.utils";
+import {
+    createAuthUserWithEmailAndPassword,
+    createUserDocumentFromAuth,
+} from "../../utils/firebase/firebase.utils";
 
-const defaultformFields = {
+import FormInput from "../form-input/FormInput";
+import Button from "../button-component/Button";
+
+const defaultFormFields = {
     displayName: "",
     email: "",
     password: "",
@@ -11,10 +17,12 @@ const defaultformFields = {
 };
 
 const SignUpForm = () => {
-    const [formFields, setFormFields] = useState(defaultformFields);
+    const [formFields, setFormFields] = useState(defaultFormFields);
     const { displayName, email, password, confirmPassword } = formFields;
 
-    console.log(formFields);
+    const resetFormFields = () => {
+        setFormFields(defaultFormFields);
+    };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -30,11 +38,12 @@ const SignUpForm = () => {
                 password
             );
 
-            
-
-            console.log(user);
+            await createUserDocumentFromAuth(user, { displayName });
+            resetFormFields();
         } catch (error) {
-            console.log(error);
+            error.code === "auth/email-already-in-use"
+                ? alert("Email already in use")
+                : alert(error.message);
         }
     };
     const handleChange = (e) => {
@@ -47,47 +56,43 @@ const SignUpForm = () => {
     };
 
     return (
-        <div>
-            <h1>Sign up with your email and password</h1>
+        <div className="sign-up-container">
+            <h2>Don't have an account?</h2>
+            <span>Sign up with your email and password</span>
             <form onSubmit={handleSubmit}>
-                <label htmlFor="displayName">Display Name</label>
-                <input
+                <FormInput
+                    label="Username"
                     required
                     onChange={handleChange}
                     name="displayName"
                     type="text"
-                    placeholder="Enter your display name"
                     value={displayName}
                 />
-                <label htmlFor="email">Email</label>
-                <input
+                <FormInput
+                    label="Email"
+                    type="email"
                     required
                     onChange={handleChange}
                     name="email"
-                    type="email"
-                    placeholder="Enter your email"
                     value={email}
                 />
-                <label htmlFor="password">Password</label>
-                <input
+                <FormInput
+                    label="Enter Password"
+                    type="password"
                     required
                     onChange={handleChange}
-                    id="password"
                     name="password"
-                    type="password"
-                    placeholder="Must be at least 8 characters long"
                     value={password}
                 />
-                <label htmlFor="confirmPassword">Confirm Password</label>
-                <input
+                <FormInput
+                    label="Confirm Password"
+                    type="password"
                     required
                     onChange={handleChange}
                     name="confirmPassword"
-                    type="password"
-                    placeholder="Confirm Password"
                     value={confirmPassword}
                 />
-                <button type="submit">Sign up</button>
+                <Button type="submit">Sign Up</Button>
             </form>
         </div>
     );
