@@ -1,10 +1,12 @@
 import "../sign-up-form/sign-up-form-styles.scss";
+
 import { useState } from "react";
+
 import Button from "../button-component/Button";
 import FormInput from "../form-input/FormInput";
+
 import {
     signInWithGooglePopup,
-    createUserDocumentFromAuth,
     signInAuthUserWithEmailAndPassword,
 } from "../../utils/firebase/firebase.utils";
 
@@ -27,26 +29,16 @@ const SignInForm = () => {
     };
 
     const signInWithGoogle = async () => {
-        try {
-            await signInWithGooglePopup().then((userCredentials) => {
-                const user = userCredentials.user;
-                createUserDocumentFromAuth(user);
-            });
-            resetFormFields();
-        } catch (error) {}
+        await signInWithGooglePopup().catch(() => {});
     };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await signInAuthUserWithEmailAndPassword(email, password).then(
-                (userCredentials) => {
-                    const user = userCredentials.user;
-                }
-            );
+            await signInAuthUserWithEmailAndPassword(email, password);
             resetFormFields();
         } catch (error) {
-            alert("Invalid email or password");
+            console.log("Unable to sign in user: ", error);
         }
     };
 
