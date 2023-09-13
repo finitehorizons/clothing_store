@@ -5,7 +5,7 @@ export const ProductsContext = createContext({
     products: [],
 });
 
-export const ShopContextProvider = ({ children }) => {
+export const ProductsProvider = ({ children }) => {
     const [products, setProducts] = useState(PRODUCTS);
     const value = { products };
     return (
