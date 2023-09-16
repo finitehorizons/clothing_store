@@ -2,7 +2,7 @@ import "../sign-up-form/sign-up-form-styles.scss";
 
 import { useState } from "react";
 
-import Button from "../button-component/Button";
+import Button, { BUTTON_TYPE_CLASSES } from "../button-component/Button";
 import FormInput from "../form-input/FormInput";
 
 import {
@@ -67,7 +67,7 @@ const SignInForm = () => {
                     <Button type="submit">Sign In</Button>
                     <Button
                         type="button"
-                        buttonType="google"
+                        buttonType={BUTTON_TYPE_CLASSES.google}
                         onClick={signInWithGoogle}>
                         Google sign in
                     </Button>
