@@ -14,6 +14,7 @@ export const BaseButton = styled.button`
     font-family: "Fira Sans Condensed";
     font-weight: bolder;
     border: none;
+    border-radius: 5px;
     cursor: pointer;
     display: flex;
     justify-content: center;
