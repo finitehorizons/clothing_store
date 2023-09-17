@@ -27,8 +27,11 @@ const Checkout = () => {
             {cartItems.map((cartItem) => (
                 <CheckoutItem cartItem={cartItem} key={cartItem.id} />
             ))}
-
-            <Total>Total: ${cartTotal}</Total>
+            {cartItems.length > 0 ? (
+                <Total>Total: ${cartTotal}</Total>
+            ) : (
+                <Total>Your cart is empty</Total>
+            )}
         </CheckoutContainer>
     );
 };
