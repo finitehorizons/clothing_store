@@ -41,10 +41,14 @@ export const Footer = styled.div`
 `;
 
 export const Name = styled.span`
-    width: 90%;
+    display: flex;
+    width: 99%;
     margin-bottom: 15px;
 `;
 
 export const Price = styled.span`
-    width: 10%;
+    display: flex;
+    width: 30%;
+    justify-content: flex-end;
+
 `;

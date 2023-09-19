@@ -11,8 +11,8 @@ export const BaseButton = styled.button`
     background-color: black;
     color: white;
     text-transform: uppercase;
-    font-family: "Fira Sans Condensed";
-    font-weight: bolder;
+    font-family: "Oswald", sans-serif;
+    font-weight: bold;
     border: none;
     border-radius: 5px;
     cursor: pointer;

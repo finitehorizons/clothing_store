@@ -25,6 +25,7 @@ export const Body = styled.div`
         font-size: 22px;
         color: #4a4a4a;
         text-transform: uppercase;
+        font-family: Oswald, sans-serif;
     }
 
     p {

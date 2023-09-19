@@ -46,7 +46,7 @@ export const CallToActionContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-family: "Cascadia Code", "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
+    font-family: "Montserrat", "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
         "Open Sans", "Helvetica Neue", sans-serif;
     padding: 30px 0;
     font-size: 18px;
