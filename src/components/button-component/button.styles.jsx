@@ -43,4 +43,6 @@ export const InvertedButton = styled(BaseButton)`
         color: white;
         border: none;
     }
+
+    
 `;
