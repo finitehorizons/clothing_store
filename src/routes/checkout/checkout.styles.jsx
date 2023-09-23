@@ -11,7 +11,7 @@ export const CheckoutContainer = styled.div`
     @media screen and (max-width: 1124px) {
         width: 95%;
         font-size: 0.8rem;
-        background-color: hsl(247, 77%, 99%);
+        background-color: hsl(222, 50%, 96%);
     }
 `;
 
@@ -33,10 +33,11 @@ export const HeaderBlock = styled.div`
 `;
 
 export const Total = styled.span`
-    margin-top: 30px;
-    margin-left: 0 auto;
-    margin-right: auto;
+    
+    margin: 0 0 0 auto;
     font-size: 36px;
+    font-weight: 600;
+    padding: 30px 0;
 
     @media screen and (max-width: 1124px) {
         font-size: 24px;

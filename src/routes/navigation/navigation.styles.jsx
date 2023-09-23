@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 
 export const NavigationContainer = styled.div`
     height: 70px;
-    width: 100%;
     display: flex;
     justify-content: space-between;
     margin-bottom: 50px;
+    padding-top: 20px;
 `;
 
 export const LogoContainer = styled(Link)`
@@ -26,4 +26,9 @@ export const NavLinks = styled.div`
 export const NavLink = styled(Link)`
     padding: 10px 15px;
     cursor: pointer;
+    color: hsl(222, 50%, 10%);
+
+    &:hover {
+        color: hsl(222, 50%, 50%); 
+    }
 `;

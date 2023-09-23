@@ -5,12 +5,13 @@ export const AuthContainer = styled.div`
     justify-content: space-between;
     width: 900px;
     margin: 90px auto;
+    height: 60vh;
 
     @media (max-width: 960px) {
         gap: 50px;
-        margin: 0 auto;
         align-items: center;
         flex-direction: column;
-        width: 50%;
+        padding-bottom: 100px;
+        width: 100%;
     }
 `;
