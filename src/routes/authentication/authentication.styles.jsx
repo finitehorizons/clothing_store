@@ -8,7 +8,8 @@ export const AuthContainer = styled.div`
     height: 60vh;
 
     @media (max-width: 960px) {
-        gap: 50px;
+        font-size: 14px;
+        gap: 20px;
         align-items: center;
         flex-direction: column;
         padding-bottom: 100px;

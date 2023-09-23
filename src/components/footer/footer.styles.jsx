@@ -3,12 +3,12 @@ import styled from "styled-components";
 export const FooterBody = styled.div`
     display: flex;
     flex-direction: row;
-    padding-top: 20px;
+    padding-top: 30px;
     padding-bottom: 50px;
     justify-content: space-around;
     height: 20vh;
     background-color: hsl(222, 50%, 5%);
-    margin-top: 10px;
+    margin-top: 20vh;
     margin-right: auto;
     margin-left: auto;
 `;
@@ -16,7 +16,7 @@ export const FooterBody = styled.div`
 export const FooterColumn = styled.div`
     display: flex;
     flex-direction: column;
-    padding: 10px;
+    padding: 10px 0;
 `;
 
 export const BaseSpan = styled.span`
@@ -38,7 +38,7 @@ export const BaseText = styled.span`
     position: absolute;
     padding-top: 15vh;
     margin-bottom: 15px;
-  
+
     text-align: center;
     letter-spacing: 1px;
 
