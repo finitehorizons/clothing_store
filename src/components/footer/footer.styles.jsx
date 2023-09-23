@@ -6,7 +6,7 @@ export const FooterBody = styled.div`
     padding-top: 20px;
     padding-bottom: 50px;
     justify-content: space-around;
-    height: 23vh;
+    height: 20vh;
     background-color: hsl(222, 50%, 5%);
     margin-top: 10px;
     margin-right: auto;
@@ -36,13 +36,13 @@ export const BaseText = styled.span`
     font-family: Oswald, sans-serif;
     font-size: 14px;
     position: absolute;
-    padding-top: 160px;
-    width: 100vh;
+    padding-top: 15vh;
+    margin-bottom: 15px;
+  
     text-align: center;
     letter-spacing: 1px;
 
-    @media screen and (max-width: 768px), screen and (max-height: 950px) {
+    @media screen and (max-height: 950px) {
         padding-top: 130px;
-
     }
 `;
