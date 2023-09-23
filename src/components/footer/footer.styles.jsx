@@ -40,4 +40,9 @@ export const BaseText = styled.span`
     width: 100vh;
     text-align: center;
     letter-spacing: 1px;
+
+    @media screen and (max-width: 768px), screen and (max-height: 950px) {
+        padding-top: 130px;
+
+    }
 `;
