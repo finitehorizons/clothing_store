@@ -3,14 +3,13 @@ import styled from "styled-components";
 export const FooterBody = styled.div`
     display: flex;
     flex-direction: row;
+    position: relative;
     padding-top: 30px;
     padding-bottom: 50px;
     justify-content: space-around;
     height: 20vh;
     background-color: hsl(222, 50%, 5%);
     margin-top: 20vh;
-    margin-right: auto;
-    margin-left: auto;
 `;
 
 export const FooterColumn = styled.div`

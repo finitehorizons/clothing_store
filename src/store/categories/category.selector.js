@@ -1,4 +1,4 @@
-export const selectCategoriesMap = (state) => {
+export const selectCategories = (state) => {
     const categoriesMap = state.categories.categories.reduce(
         (acc, { title, items }) => {
             acc[title.toLowerCase()] = items;

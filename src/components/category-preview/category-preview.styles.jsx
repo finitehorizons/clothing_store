@@ -13,6 +13,7 @@ export const Preview = styled.div`
     grid-template-columns: repeat(4, 1fr);
     column-gap: 20px;
     row-gap: 20px;
+    padding: 0 20px;
     @media screen and (max-width: 960px){
         grid-template-columns: repeat(2, 1fr);
     }
