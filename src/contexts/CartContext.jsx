@@ -1,4 +1,6 @@
-import { createContext, useState, useEffect, useReducer } from "react";
+import { createContext, useReducer } from "react";
+
+import { createAction } from "../utils/firebase/reducer/reducer.utils";
 
 const addCartItem = (cartItems, productToAdd) => {
     const existingCartItem = cartItems.find(
@@ -66,12 +68,12 @@ const cartReducer = (state, action) => {
     const { type, payload } = action;
 
     switch (type) {
-        case "SET_CART_ITEMS":
+        case CART_ACTION_TYPES.SET_CART_ITEMS:
             return {
                 ...state,
                 ...payload,
             };
-        case "SET_IS_CART_OPEN":
+        case CART_ACTION_TYPES.SET_IS_CART_OPEN:
             return {
                 ...state,
                 isCartOpen: payload,
@@ -106,6 +108,7 @@ export const CartProvider = ({ children }) => {
 
     const [{ cartItems, cartCount, cartTotal, isCartOpen }, dispatch] =
         useReducer(cartReducer, INITIAL_STATE);
+
     const updateCartItemsReducer = (newCartItems) => {
         const newCartTotal = newCartItems.reduce(
             (total, cartItem) => total + cartItem.quantity * cartItem.price,
@@ -116,14 +119,13 @@ export const CartProvider = ({ children }) => {
             0
         );
 
-        dispatch({
-            type: "SET_CART_ITEMS",
-            payload: {
+        dispatch(
+            createAction(CART_ACTION_TYPES.SET_CART_ITEMS, {
                 cartItems: newCartItems,
                 cartCount: newCartCount,
                 cartTotal: newCartTotal,
-            },
-        });
+            })
+        );
     };
 
     const addItemToCart = (productToAdd) => {
@@ -141,7 +143,7 @@ export const CartProvider = ({ children }) => {
     };
 
     const setIsCartOpen = (bool) => {
-        dispatch({ type: CART_ACTION_TYPES.SET_IS_CART_OPEN, payload: bool });
+        dispatch(createAction(CART_ACTION_TYPES.SET_IS_CART_OPEN, bool));
     };
 
     const value = {

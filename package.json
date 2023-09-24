@@ -3,6 +3,7 @@
     "version": "0.1.0",
     "private": true,
     "dependencies": {
+        "@reduxjs/toolkit": "^1.9.5",
         "@testing-library/jest-dom": "^5.17.0",
         "@testing-library/react": "^13.4.0",
         "@testing-library/user-event": "^13.5.0",
@@ -10,9 +11,13 @@
         "postcss": "^8.4.29",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
+        "react-redux": "^8.1.2",
         "react-router": "^6.15.0",
         "react-router-dom": "6",
         "react-scripts": "5.0.1",
+        "redux": "^4.2.1",
+        "redux-logger": "^3.0.6",
+        "redux-toolkit": "^1.1.2",
         "sass": "^1.66.1",
         "sass-loader": "^13.3.2",
         "styled-components": "^6.0.8",
@@ -43,12 +48,12 @@
         ]
     },
     "devDependencies": {
-        "resolve-url-loader": "^5.0.0",
         "@babel/core": "^7.1.0",
         "@babel/plugin-proposal-class-properties": "^7.4.4",
         "@babel/preset-env": "^7.1.0",
         "@babel/preset-react": "^7.0.0",
         "babel-loader": "^8.0.2",
+        "resolve-url-loader": "^5.0.0",
         "webpack": "^4.19.1",
         "webpack-cli": "^3.1.0"
     }

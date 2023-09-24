@@ -26,7 +26,7 @@ export const Input = styled.input`
     background: none;
     background-color: hsl(222, 50%, 96%);
     color: ${mainColor};
-    font-size: 18px;
+    font-size: 14px;
     padding: 10px 10px 10px 5px;
     display: block;
     width: 100%;
@@ -40,9 +40,6 @@ export const Input = styled.input`
 
     &:focus ~ ${FormInputLabel} {
         ${shrinkLabelStyles}
-    }
-    @media (max-width: 790px) {
-        font-size: 12px;
     }
 `;
 
