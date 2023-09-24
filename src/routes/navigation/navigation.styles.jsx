@@ -7,7 +7,8 @@ export const NavigationContainer = styled.div`
     justify-content: space-between;
     margin-bottom: 50px;
     padding-top: 20px;
-    
+    padding-left: 20px;
+    padding-right: 20px;
 `;
 
 export const LogoContainer = styled(Link)`
@@ -30,6 +31,6 @@ export const NavLink = styled(Link)`
     color: hsl(222, 50%, 10%);
 
     &:hover {
-        color: hsl(222, 50%, 50%); 
+        color: hsl(222, 50%, 50%);
     }
 `;
