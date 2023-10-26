@@ -4,7 +4,9 @@ export const BackgroundImage = styled.div`
     width: 100%;
     height: 100%;
     background-size: cover;
-    background-position: center;
+    background-position: center center;
+    background-repeat: no-repeat;
+    border-radius: 5px;
     background-image: ${({ imageUrl }) => `url(${imageUrl})`};
 `;
 export const Body = styled.div`
@@ -22,7 +24,7 @@ export const Body = styled.div`
     h2 {
         font-weight: bold;
         margin: 0 6px 0;
-        font-size: 22px;
+        font-size: 20px;
         color: #4a4a4a;
         text-transform: uppercase;
         font-family: Oswald, sans-serif;
@@ -30,13 +32,25 @@ export const Body = styled.div`
 
     p {
         font-weight: lighter;
-        font-size: 16px;
+        font-size: 14px;
+    }
+
+    @media screen and (width <= 670px) {
+        padding-inline: 0.8rem;
+    }
+
+    @media screen and (width <= 500px) {
+        padding: 22px;
+
+        h2 {
+            font-size: 1rem;
+        }
     }
 `;
 
 export const DirectoryItemContainer = styled.div`
     min-width: 30%;
-    height: 480px;
+    height: 50vh;
     flex: 1 1 auto;
     display: flex;
     align-items: center;
@@ -51,7 +65,7 @@ export const DirectoryItemContainer = styled.div`
 
         & ${BackgroundImage} {
             transform: scale(1.1);
-            transition: transform 6s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+            transition: transform 7s cubic-bezier(0.25, 0.45, 0.45, 0.95);
         }
 
         & ${Body} {

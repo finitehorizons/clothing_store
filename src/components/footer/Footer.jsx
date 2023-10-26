@@ -64,7 +64,7 @@ const Footer = () => {
                     </BaseSpan>
                 </FooterColumn>
                 <BaseText>
-                    &copy; 2023 NEXT Outfitters Inc. All Rights Reserved
+                    &copy; 2023 Zenith Clothing Inc. All Rights Reserved
                 </BaseText>
             </FooterBody>
         </>

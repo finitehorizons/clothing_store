@@ -6,36 +6,53 @@ import {
     ImageContainer,
     RemoveButton,
     BaseSpan,
+    ProductContainer,
+    Price,
 } from "./checkout-item.styles";
 
-import { useContext } from "react";
-import { CartContext } from "../../contexts/CartContext";
+import { AiOutlineMinusCircle, AiOutlinePlusCircle } from "react-icons/ai";
+
+import {
+    clearItemFromCart,
+    addItemToCart,
+    removeItemFromCart,
+} from "../../store/cart/cart.action";
+import { useDispatch, useSelector } from "react-redux";
+import { selectCartItems } from "../../store/cart/cart.selector";
 
 const CheckoutItem = ({ cartItem }) => {
+    const dispatch = useDispatch();
     const { name, price, quantity, imageUrl } = cartItem;
-    const { clearItemFromCart, addItemToCart, removeItemFromCart } =
-        useContext(CartContext);
+    const cartItems = useSelector(selectCartItems);
 
-    const clearItemHandler = () => clearItemFromCart(cartItem);
-    const addItemHandler = () => addItemToCart(cartItem);
-    const removeItemHandler = () => removeItemFromCart(cartItem);
+    const clearItemHandler = () =>
+        dispatch(clearItemFromCart(cartItems, cartItem));
+    const addItemHandler = () => dispatch(addItemToCart(cartItems, cartItem));
+    const removeItemHandler = () =>
+        dispatch(removeItemFromCart(cartItems, cartItem));
 
     return (
         <CheckoutItemContainer>
-            <ImageContainer>
-                <img src={imageUrl} alt={`${name}`} />
-            </ImageContainer>
-
+            
+                <ImageContainer>
+                    <img src={imageUrl} alt={`${name}`} />
+                </ImageContainer>
+            
             <BaseSpan>{name}</BaseSpan>
             <Quantity>
-                <Arrow onClick={removeItemHandler}>&#10094;</Arrow>
+                <Arrow onClick={removeItemHandler}>
+                    <AiOutlineMinusCircle />
+                </Arrow>
                 <Value>{quantity}</Value>
-                <Arrow onClick={addItemHandler}>&#10095;</Arrow>
+                <Arrow onClick={addItemHandler}>
+                    <AiOutlinePlusCircle />
+                </Arrow>
             </Quantity>
 
-            <BaseSpan>${price}</BaseSpan>
-
-            <RemoveButton onClick={clearItemHandler}>&#10005;</RemoveButton>
+            <Price>
+                <BaseSpan>${price}</BaseSpan>
+                <RemoveButton onClick={clearItemHandler}>remove</RemoveButton>
+            </Price>
         </CheckoutItemContainer>
     );
 };

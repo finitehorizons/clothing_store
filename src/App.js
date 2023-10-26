@@ -13,7 +13,7 @@ import Home from "./routes/home/Home";
 import Shop from "./routes/shop/Shop";
 import Checkout from "./routes/checkout/Checkout";
 import Authentication from "./routes/authentication/Authentication";
-import Contact from "./routes/contact/Contact";
+import About from "./routes/about/About";
 import Footer from "./components/footer/Footer";
 import { setCurrentUser } from "./store/user/user.action";
 
@@ -51,7 +51,7 @@ const App = () => {
                     <Route index element={<Home />} />
                     <Route path="shop/*" element={<Shop />} />
                     <Route path="auth" element={<Authentication />} />
-                    <Route path="contact" element={<Contact />}></Route>
+                    <Route path="about" element={<About />}></Route>
                     <Route path="checkout" element={<Checkout />}></Route>
                 </Route>
             </Routes>

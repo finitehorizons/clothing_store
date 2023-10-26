@@ -1,4 +1,4 @@
-import { SignUpContainer } from "./sign-up-form-styles";
+import { SignUpContainer, ButtonsContainer } from "./sign-up-form-styles";
 import { useState } from "react";
 
 import {
@@ -91,8 +91,10 @@ const SignUpForm = () => {
                     onChange={handleChange}
                     name="confirmPassword"
                     value={confirmPassword}
-                />
-                <Button type="submit">Sign Up</Button>
+                /><ButtonsContainer>
+                    
+                    <Button type="submit">Sign Up</Button>
+                </ButtonsContainer>
             </form>
         </SignUpContainer>
     );

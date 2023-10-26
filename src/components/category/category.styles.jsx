@@ -13,7 +13,11 @@ export const CategoryContainer = styled.div`
 `;
 
 export const CategoryTitle = styled.h2`
-    font-size: 38px;
+    font-size: 32px;
     margin-bottom: 25px;
+    letter-spacing: .5rem;
     text-align: center;
+    font-family: var(--ff-serif);
+
 `;
+

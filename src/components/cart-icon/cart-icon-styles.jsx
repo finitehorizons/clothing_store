@@ -8,6 +8,7 @@ export const CartIconContainer = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    
     cursor: pointer;
 `;
 
@@ -19,6 +20,10 @@ export const ShoppingIcon = styled(ShoppingSvg)`
 export const ItemCount = styled.span`
     position: absolute;
     font-size: 10px;
-    font-weight: 400;
-    bottom: 12px;
+    font-weight: bolder;
+    bottom: 13px;
+    
+    &:hover {
+        color: hsl(222, 50%, 50%);
+    }
 `;
