@@ -1,20 +1,23 @@
 import styled from "styled-components";
 
 export const AuthContainer = styled.div`
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 6rem;
-    justify-content: center;
+    justify-content: space-between;
     max-width: 900px;
-    margin: 50px auto;
-    height: 65vh;
+    margin: 10vh auto;
+    min-height: 65vh;
 
     @media (max-width: 960px) {
-        gap: 1rem;
+        padding-inline: 2rem;
+        grid-template-columns: 1fr;
+        gap: 3rem;
         align-items: center;
-        flex-direction: column;
+        justify-content: center;
         padding-bottom: 0px;
-        margin-top: 8rem;
+        margin-top: 3rem;
         width: 100%;
-        height: 90vh;
+        min-height: 90vh;
     }
 `;

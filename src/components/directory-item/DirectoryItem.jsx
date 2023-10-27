@@ -9,7 +9,7 @@ import {
 import { Fragment } from "react";
 
 const DirectoryItem = ({ category }) => {
-    const { imageUrl, title, route } = category;
+    const { imageurl, title, route } = category;
     const navigate = useNavigate();
 
     const onNavigateHandler = () => navigate(route);
@@ -17,7 +17,7 @@ const DirectoryItem = ({ category }) => {
     return (
         <Fragment>
             <DirectoryItemContainer onClick={onNavigateHandler}>
-                <BackgroundImage imageUrl={imageUrl} />
+                <BackgroundImage imageurl={imageurl} />
                 <Body>
                     <h2>{title}</h2>
                     <p>Shop Now</p>

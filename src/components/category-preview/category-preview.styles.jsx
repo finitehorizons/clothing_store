@@ -10,12 +10,6 @@ export const Title = styled.h2`
     font-weight: 700;
     text-align: center;
 
-    /* &:before {
-        content: "shop / ";
-        font-family: var(--ff-serif-F);
-        font-weight: bold;
-        color: hsl(255 0 0 / 25);
-    } */
 `;
 
 export const Preview = styled.div`

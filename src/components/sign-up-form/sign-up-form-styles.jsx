@@ -1,15 +1,15 @@
 import styled from "styled-components";
 
 export const SignUpContainer = styled.div`
-    display: flex;
-    flex-direction: column;
-    width: 350px;
+    
+    width: 100%;
+    min-height: 450px;
+    height: 500px;
     border: 1px solid rgba(0, 0, 0, 0.5);
     border-radius: 5px;
     padding-inline: 1rem;
     padding-block: 1rem;
     box-shadow: 0px 0px 10px -5px rgba(0, 0, 0, 1);
-    height: auto;
 
     h2 {
         margin: 10px 0;
@@ -21,9 +21,13 @@ export const SignUpContainer = styled.div`
     }
 
     @media screen and (width <= 960px) {
+        min-height: 300px;
+        max-height: 100%;
+        min-width: 375px;
+        max-width: 600px;
+        margin: 0 auto;
         margin-top: 1rem;
         border: none;
-        border-top: 2px solid black;
         border-radius: 0;
         box-shadow: none;
     }
