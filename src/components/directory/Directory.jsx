@@ -2,8 +2,6 @@ import DirectoryItem from "../directory-item/DirectoryItem.jsx";
 
 import { DirectoryContainer } from "./directory-styles.jsx";
 
-import Spinner from "../spinner/Spinner.jsx";
-
 const categories = [
     {
         id: 1,

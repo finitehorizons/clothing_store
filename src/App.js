@@ -28,7 +28,7 @@ const App = () => {
             dispatch(setCurrentUser(user));
         });
         return unsubscribe;
-    }, []);
+    },);
 
 
     // export const CategoriesProvider = ({ children }) => {
