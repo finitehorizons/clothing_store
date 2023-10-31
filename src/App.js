@@ -2,7 +2,6 @@ import { Routes, Route } from "react-router-dom";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 
-import { getCurrentUser } from "../src/utils/firebase/firebase.utils";
 
 //Routes
 import Navigation from "./routes/navigation/Navigation";
@@ -13,6 +12,7 @@ import Authentication from "./routes/authentication/Authentication";
 import About from "./routes/about/About";
 import Footer from "./components/footer/Footer";
 import { checkUserSession } from "./store/user/user.action";
+import { setCurrentUser } from "./store/user/user.reducer";
 
 const App = () => {
     const dispatch = useDispatch();
