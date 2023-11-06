@@ -1,6 +1,8 @@
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
+
 import CheckoutItem from "../../components/checkout-item/CheckoutItem";
+import PaymentForm from "../../components/payment-form/PaymentForm";
 
 import {
     selectCartTotal,
@@ -8,6 +10,7 @@ import {
 } from "../../store/cart/cart.selector";
 
 import {
+    Container,
     CheckoutContainer,
     Total,
     CallToActionToShop,
@@ -42,8 +45,6 @@ const Checkout = () => {
         0
     );
 
-    
-
     return (
         <CheckoutContainer>
             <CheckoutCTA>
@@ -58,39 +59,47 @@ const Checkout = () => {
                 </CheckoutTotalItems>
             </CheckoutCTA>
 
-            <CheckoutWrapper>
-                <CheckoutItemDetails>
-                    {cartItems.map((cartItem) => (
-                        <CheckoutItem cartItem={cartItem} key={cartItem.id} />
-                    ))}
-                </CheckoutItemDetails>
-                <CheckoutCartDetails>
-                    <Summary>Order Summary</Summary>{" "}
-                    {cartItems.length > 0 ? (
-                        <>
-                            <Total>Total: ${cartTotal}</Total>
-                        </>
-                    ) : (
-                        <>
-                            <Empty>Your cart is empty</Empty>
-                            <CallToActionContainer>
-                                <CallToActionToShop
-                                    onClick={onNavigateShopHandler}>
-                                    Shop
-                                </CallToActionToShop>
-                                <CallToActionSignIn
-                                    onClick={onNavigateSignInHandler}>
-                                    Sign in
-                                </CallToActionSignIn>
-                                <CallToActionHome
-                                    onClick={onNavigateHomeHandler}>
-                                    Home
-                                </CallToActionHome>
-                            </CallToActionContainer>
-                        </>
-                    )}
-                </CheckoutCartDetails>
-            </CheckoutWrapper>
+            {cartItems.length > 0 ? (
+                <CheckoutWrapper>
+                    <CheckoutItemDetails>
+                        {cartItems.map((cartItem) => (
+                            <CheckoutItem
+                                cartItem={cartItem}
+                                key={cartItem.id}
+                            />
+                        ))}
+                    </CheckoutItemDetails>
+                    <Container>
+                        <CheckoutCartDetails>
+                            {cartItems.length > 0 ? (
+                                <>
+                                    <Summary>Order Summary</Summary>{" "}
+                                    <Total>Total: ${cartTotal}</Total>
+                                </>
+                            ) : (
+                                <>
+                                    <Empty>Your cart is empty</Empty>
+                                    <CallToActionContainer>
+                                        <CallToActionToShop
+                                            onClick={onNavigateShopHandler}>
+                                            Shop
+                                        </CallToActionToShop>
+                                        <CallToActionSignIn
+                                            onClick={onNavigateSignInHandler}>
+                                            Sign in
+                                        </CallToActionSignIn>
+                                        <CallToActionHome
+                                            onClick={onNavigateHomeHandler}>
+                                            Home
+                                        </CallToActionHome>
+                                    </CallToActionContainer>
+                                </>
+                            )}
+                        </CheckoutCartDetails>
+                        <PaymentForm />
+                    </Container>
+                </CheckoutWrapper>
+            ) : <div></div>}
         </CheckoutContainer>
     );
 };

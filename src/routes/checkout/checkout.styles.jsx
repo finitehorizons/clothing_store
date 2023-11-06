@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const CheckoutContainer = styled.div`
     width: 95%;
-    min-height: 90vh;
+    min-height: 50vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -33,9 +33,12 @@ export const HeaderBlock = styled.div`
 `;
 
 export const Total = styled.span`
-    font-size: 18px;
+    display: flex;
+    justify-content: flex-end;
+    font-size: 22px;
     font-weight: 700;
     width: 100%;
+    padding: 10px 10px;
 
     @media screen and (max-width: 1124px) {
     }
@@ -100,8 +103,10 @@ export const CheckoutCTA = styled.div`
 `;
 
 export const CheckoutTitle = styled.span`
+    width: fit-content;
     padding-top: 8px;
     display: flex;
+
     justify-content: flex-start;
     gap: 0.3rem;
     font-weight: bold;
@@ -122,6 +127,7 @@ export const CheckoutWrapper = styled.div`
     width: 100%;
     justify-content: space-between;
     display: flex;
+    gap: 2rem;
 
     @media screen and (width <= 768px) {
         flex-direction: column;
@@ -129,10 +135,10 @@ export const CheckoutWrapper = styled.div`
 `;
 
 export const CheckoutItemDetails = styled.div`
-    width: 65%;
+    width: 100%;
 
     @media screen and (width <= 768px) {
-        width: 100%
+        width: 100%;
     }
 `;
 
@@ -142,7 +148,8 @@ export const CheckoutCartDetails = styled.div`
     flex-direction: column;
     background-color: #e2e8f0;
     height: 50vh;
-    width: 25%;
+    width: 100%;
+
     border: 1px solid #e2e8f0;
     box-shadow: 0px 0px 5px -2px rgba(0, 0, 0, 0.3);
 
@@ -155,17 +162,27 @@ export const CheckoutCartDetails = styled.div`
 `;
 
 export const Summary = styled.span`
-color: #64748b;
+    color: #64748b;
     font-size: 14px;
     font-family: var(--ff-serif);
     letter-spacing: 1px;
     width: 100%;
     border-bottom: 1px solid lightgray;
-
-
 `;
 
 export const Empty = styled.span`
-text-align: center;
+    text-align: center;
     color: #94a3b8;
+`;
+
+export const Container = styled.div`
+    min-width: 40%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+
+    @media screen and (width <= 768px) {
+        width: 100%;
+    }
 `;

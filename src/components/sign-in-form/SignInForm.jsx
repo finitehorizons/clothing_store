@@ -5,9 +5,7 @@ import { useState } from "react";
 import Button, { BUTTON_TYPE_CLASSES } from "../button-component/Button";
 import FormInput from "../form-input/FormInput";
 
-import {
-    signInAuthUserWithEmailAndPassword,
-} from "../../utils/firebase/firebase.utils";
+import { signInAuthUserWithEmailAndPassword } from "../../utils/firebase/firebase.utils";
 
 import { useDispatch } from "react-redux";
 

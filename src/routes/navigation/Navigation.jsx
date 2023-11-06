@@ -25,12 +25,11 @@ const Navigation = () => {
     const isCartOpen = useSelector(selectIsCartOpen);
 
     const navigate = useNavigate();
-    const handleSignOut = () => {
-        signOutUser();
+
+    const signOutUser = () => {
+        dispatch(signOutStart());
         navigate("/");
     };
-
-    const signOutUser = () => dispatch(signOutStart());
 
     return (
         <>

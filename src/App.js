@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 
 
+
 //Routes
 import Navigation from "./routes/navigation/Navigation";
 import Home from "./routes/home/Home";
@@ -12,14 +13,14 @@ import Authentication from "./routes/authentication/Authentication";
 import About from "./routes/about/About";
 import Footer from "./components/footer/Footer";
 import { checkUserSession } from "./store/user/user.action";
-import { setCurrentUser } from "./store/user/user.reducer";
+// import { setCurrentUser } from "./store/user/user.reducer";
 
 const App = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
         dispatch(checkUserSession());
-    }, []);
+    });
 
     return (
         <>
