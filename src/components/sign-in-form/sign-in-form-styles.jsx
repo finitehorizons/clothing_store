@@ -10,6 +10,7 @@ export const SignInContainer = styled.div`
     box-shadow: 0px 0px 10px -5px rgba(0, 0, 0, 1);
     max-height: 50vh;
     min-height: 500px;
+    height: 500px;
 
     form {
         width: 100%;
@@ -22,13 +23,13 @@ export const SignInContainer = styled.div`
     span {
         font-size: 0.8rem;
     }
+
     @media screen and (width <= 960px) {
         min-height: 300px;
         max-height: 100%;
         min-width: 375px;
         max-width: 600px;
-        margin: 0 auto;
-        margin-top: 1rem;
+        margin: 1rem auto 0;
         border: none;
         border-radius: 0;
         box-shadow: none;
