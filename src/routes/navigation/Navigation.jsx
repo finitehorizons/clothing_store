@@ -1,6 +1,6 @@
 import { Outlet, useNavigate } from "react-router-dom";
 
-import { ReactComponent as Logo } from "../../assets/logo2 (2).svg";
+import { ReactComponent as Logo } from "../../assets/Zenith.svg";
 
 import { useDispatch, useSelector } from "react-redux";
 
