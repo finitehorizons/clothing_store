@@ -7,7 +7,7 @@ export const AuthContainer = styled.div`
     justify-content: space-between;
     max-width: 900px;
     margin: 10vh auto;
-    min-height: 65vh;
+    min-height: 45vh;
 
     @media (max-width: 960px) {
         padding-inline: 2rem;
@@ -21,3 +21,17 @@ export const AuthContainer = styled.div`
         min-height: 90vh;
     }
 `;
+
+export const DemoWrapper = styled.div`
+    display: flex;
+    position: relative;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10rem;
+    border-top: 2px solid black;
+    
+    p {
+        font-size: 18px;
+    }
+`
