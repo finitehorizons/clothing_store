@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const SignUpContainer = styled.div`
     
     width: 100%;
-    min-height: 450px;
+    min-height: 500px;
     height: 500px;
     border: 1px solid rgba(0, 0, 0, 0.5);
     border-radius: 5px;
