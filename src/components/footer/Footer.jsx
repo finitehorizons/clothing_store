@@ -14,7 +14,7 @@ const Footer = () => {
     const onNavigateShopHandler = () => navigate("/shop");
     const onNavigateCheckoutHandler = () => navigate("/checkout");
     const onNavigateHomeHandler = () => navigate("/");
-    const onNavigateContactHandler = () => navigate("/contact");
+    const onNavigateContactHandler = () => navigate("/");
 
     const onNavigateMensHandler = () => navigate("/shop/mens");
     const onNavigateWomensHandler = () => navigate("/shop/womens");
@@ -23,9 +23,9 @@ const Footer = () => {
     const onNavigateShoesHandler = () => navigate("/shop/sneakers");
 
     const onNavigateSignInHandler = () => navigate("/auth");
-    const onNavigateTermsHandler = () => navigate("/terms");
-    const onNavigateCareersHandler = () => navigate("/careers");
-    const onNavigateLegalHandler = () => navigate("/legal");
+    const onNavigateTermsHandler = () => navigate("/");
+    const onNavigateCareersHandler = () => navigate("/");
+    const onNavigateLegalHandler = () => navigate("/");
 
     return (
         <>
