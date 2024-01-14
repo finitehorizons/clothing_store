@@ -28,13 +28,10 @@ const PaymentForm = () => {
 
     const paymentHandler = async (e) => {
         e.preventDefault();
-
         if (!stripe || !elements) {
             return;
         }
-
         setIsProcessingPayment(true);
-
         const response = await fetch(
             "/.netlify/functions/create-payment-intent",
             {
@@ -83,7 +80,9 @@ const PaymentForm = () => {
                         {/* <PaymentElement clientSecret={{ CLIENT_SECRET }} /> */}
                         <PaymentButton
                             isLoading={isProcessingPayment}
-                            buttonType={BUTTON_TYPE_CLASSES.inverted}> Pay now
+                            buttonType={BUTTON_TYPE_CLASSES.inverted}>
+                            {" "}
+                            Pay now
                         </PaymentButton>
                     </ElementContainer>
                 </StripeContainer>
